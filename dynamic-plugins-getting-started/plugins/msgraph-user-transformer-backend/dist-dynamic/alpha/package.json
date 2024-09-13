@@ -1,0 +1,6 @@
+{
+  "name": "@cloudtooling/backstage-plugin-msgraph-user-transformer",
+  "version": "0.1.0",
+  "main": "../dist/alpha.cjs.js",
+  "types": "../dist/alpha.d.ts"
+}

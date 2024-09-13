@@ -1,0 +1,49 @@
+{
+  "name": "@cloudtooling/backstage-plugin-msgraph-user-transformer-dynamic",
+  "version": "0.1.0",
+  "main": "dist/index.cjs.js",
+  "types": "dist/index.d.ts",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/index.cjs.js",
+    "types": "dist/index.d.ts",
+    "registry": "https://jfrog.ford.com/artifactory/api/npm/cloudtooling-npm-repository/"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.cjs.js"
+    },
+    "./alpha": {
+      "require": "./dist/alpha.cjs.js",
+      "types": "./dist/alpha.d.ts",
+      "default": "./dist/alpha.cjs.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "backstage": {
+    "role": "backend-plugin-module",
+    "pluginId": "catalog",
+    "pluginPackage": "@cloudtooling/backstage-plugin-msgraph-user-transformer"
+  },
+  "files": [
+    "dist",
+    "alpha"
+  ],
+  "bundleDependencies": true,
+  "peerDependencies": {
+    "@backstage/backend-plugin-api": "^0.6.17",
+    "@backstage/catalog-model": "1.5.0",
+    "@backstage/plugin-catalog-backend-module-msgraph": "0.5.25"
+  },
+  "overrides": {
+    "@aws-sdk/util-utf8-browser": {
+      "@smithy/util-utf8": "^2.0.0"
+    }
+  },
+  "resolutions": {
+    "@aws-sdk/util-utf8-browser": "npm:@smithy/util-utf8@~2"
+  }
+}

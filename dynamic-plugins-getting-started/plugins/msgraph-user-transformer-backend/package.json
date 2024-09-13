@@ -1,0 +1,61 @@
+{
+  "name": "@cloudtooling/backstage-plugin-msgraph-user-transformer",
+  "version": "0.1.0",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/index.cjs.js",
+    "types": "dist/index.d.ts",
+    "registry": "https://jfrog.ford.com/artifactory/api/npm/cloudtooling-npm-repository/"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./alpha": "./src/alpha.ts",
+    "./package.json": "./package.json"
+  },
+  "backstage": {
+    "role": "backend-plugin-module",
+    "pluginId": "catalog",
+    "pluginPackage": "@cloudtooling/backstage-plugin-msgraph-user-transformer"
+  },
+  "scripts": {
+    "start": "backstage-cli package start",
+    "tsc": "tsc",
+    "build": "backstage-cli package build",
+    "lint": "backstage-cli package lint",
+    "test": "backstage-cli package test",
+    "clean": "backstage-cli package clean",
+    "prepack": "backstage-cli package prepack",
+    "postpack": "backstage-cli package postpack",
+    "export-dynamic": "janus-cli package export-dynamic-plugin --clean"
+  },
+  "dependencies": {
+    "@backstage/backend-plugin-api": "^0.6.17",
+    "@backstage/catalog-model": "1.5.0",
+    "@backstage/plugin-catalog-backend-module-msgraph": "0.5.25"
+  },
+  "devDependencies": {
+    "@backstage/backend-test-utils": "^0.4.3",
+    "@backstage/cli": "^0.26.3",
+    "@backstage/plugin-auth-backend": "^0.22.8",
+    "@backstage/plugin-auth-backend-module-guest-provider": "^0.1.3",
+    "@janus-idp/cli": "1.13.1",
+    "@types/supertest": "^2.0.12",
+    "msw": "^1.0.0",
+    "supertest": "^6.2.4"
+  },
+  "files": [
+    "dist",
+    "dist-dynamic/*.*",
+    "dist-dynamic/dist/**",
+    "dist-dynamic/alpha/*",
+    "dist-dynamic/node_modules"
+  ],
+  "bundledDependencies": [
+    "@backstage/backend-plugin-api",
+    "@backstage/catalog-model",
+    "@backstage/plugin-catalog-backend-module-msgraph"
+  ]
+}
